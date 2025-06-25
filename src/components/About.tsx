@@ -47,16 +47,16 @@ const About = () => {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="/3f6d951e-c32e-4da1-888c-7f185e3a1caa copy.jpeg" 
+                src="/3f6d951e-c32e-4da1-888c-7f185e3a1caa.jpeg" 
                 alt="BrandDosage experiential marketing team in action"
                 className="w-full h-[500px] object-cover object-center"
               />
               
-              {/* Overlay Stats Card - Positioned at bottom-right with green theme */}
-              <div className="absolute bottom-6 right-6 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 shadow-2xl z-30 border-2 border-white/20 backdrop-blur-sm min-w-[140px]">
+              {/* Overlay Stats Card - Positioned at bottom-left with white background and hero colors */}
+              <div className="absolute bottom-6 left-6 bg-white rounded-2xl p-6 shadow-2xl z-30 border border-gray-100 min-w-[160px]">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-2">10+</div>
-                  <div className="text-green-100 text-sm font-semibold">Years Experience</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-blue-900 to-green-600 bg-clip-text text-transparent mb-2">10+</div>
+                  <div className="text-gray-600 text-sm font-semibold">Years Experience</div>
                 </div>
               </div>
             </div>
