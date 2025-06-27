@@ -1,10 +1,20 @@
 import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const About = () => {
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [contentRef, contentVisible] = useScrollAnimation();
+  const [imageRef, imageVisible] = useScrollAnimation();
+
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 transition-all duration-800 ${
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Who We Are
           </h2>
@@ -15,10 +25,15 @@ const About = () => {
           </p>
         </div>
 
-        {/* Main Content Section - Matching First Reference Image */}
+        {/* Main Content Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div 
+            ref={contentRef}
+            className={`space-y-8 transition-all duration-800 delay-200 ${
+              contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+            }`}
+          >
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
               Crafting Experiences That Matter
             </h3>
@@ -44,7 +59,12 @@ const About = () => {
           </div>
 
           {/* Right Image Section */}
-          <div className="relative">
+          <div 
+            ref={imageRef}
+            className={`relative transition-all duration-800 delay-400 ${
+              imageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+            }`}
+          >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img 
                 src="/3f6d951e-c32e-4da1-888c-7f185e3a1caa.jpeg" 
@@ -52,8 +72,8 @@ const About = () => {
                 className="w-full h-[500px] object-cover object-center"
               />
               
-              {/* Overlay Stats Card - Positioned at bottom-left with white background and hero colors */}
-              <div className="absolute bottom-6 left-6 bg-white rounded-2xl p-6 shadow-2xl z-30 border border-gray-100 min-w-[160px]">
+              {/* Overlay Stats Card */}
+              <div className="absolute bottom-6 left-6 bg-white rounded-2xl p-6 shadow-2xl z-30 border border-gray-100 min-w-[160px] transform transition-all duration-500 delay-600 hover:scale-105">
                 <div className="text-center">
                   <div className="text-3xl font-bold bg-gradient-to-r from-blue-900 to-green-600 bg-clip-text text-transparent mb-2">10+</div>
                   <div className="text-gray-600 text-sm font-semibold">Years Experience</div>

@@ -10,8 +10,13 @@ import {
   Megaphone, 
   PenTool
 } from 'lucide-react';
+import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
 
 const Services = () => {
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [featuresRef, featuresVisible] = useScrollAnimation();
+  const [servicesRef, servicesVisible] = useScrollAnimation();
+
   // Feature cards matching the second reference image design
   const features = [
     {
@@ -91,10 +96,21 @@ const Services = () => {
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Feature Cards Section - Matching Second Reference Image */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        {/* Feature Cards Section */}
+        <div 
+          ref={featuresRef}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 transition-all duration-800 ${
+            featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           {features.map((feature, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 border border-gray-100">
+            <div 
+              key={index} 
+              className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:transform hover:scale-105 border border-gray-100 ${
+                featuresVisible ? 'animate-slide-in-left' : ''
+              }`}
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               <div className={`bg-gradient-to-br ${feature.gradient} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
                 <feature.icon className="w-8 h-8 text-white" />
               </div>
@@ -105,7 +121,12 @@ const Services = () => {
         </div>
 
         {/* Services Section */}
-        <div className="text-center mb-16">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 transition-all duration-800 ${
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Professional Services
           </h2>
@@ -116,9 +137,20 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          ref={servicesRef}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-800 ${
+            servicesVisible ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
           {services.map((service, index) => (
-            <div key={index} className="group bg-white hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 p-8 rounded-2xl transition-all duration-300 hover:shadow-xl border border-gray-100 hover:border-green-200">
+            <div 
+              key={index} 
+              className={`group bg-white hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 p-8 rounded-2xl transition-all duration-500 hover:shadow-xl border border-gray-100 hover:border-green-200 ${
+                servicesVisible ? 'animate-slide-in-right' : ''
+              }`}
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
               <div className="bg-gradient-to-br from-blue-900 to-green-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <service.icon className="w-7 h-7 text-white" />
               </div>

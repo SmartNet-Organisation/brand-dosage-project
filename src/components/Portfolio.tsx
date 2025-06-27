@@ -1,7 +1,12 @@
 import React from 'react';
 import { ExternalLink, Award, Users, TrendingUp } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Portfolio = () => {
+  const [titleRef, titleVisible] = useScrollAnimation();
+  const [projectsRef, projectsVisible] = useScrollAnimation();
+  const [expertiseRef, expertiseVisible] = useScrollAnimation();
+
   const projects = [
     {
       title: "Tech Conference Activation",
@@ -36,7 +41,12 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 transition-all duration-800 ${
+            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Success Stories
           </h2>
@@ -46,9 +56,20 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div 
+          ref={projectsRef}
+          className={`grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 transition-all duration-800 ${
+            projectsVisible ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+            <div 
+              key={index} 
+              className={`bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 group ${
+                projectsVisible ? (index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right') : ''
+              }`}
+              style={{ animationDelay: `${index * 200}ms` }}
+            >
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
@@ -84,7 +105,12 @@ const Portfolio = () => {
         </div>
 
         {/* Expertise Highlights */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg">
+        <div 
+          ref={expertiseRef}
+          className={`bg-white rounded-3xl p-8 md:p-12 shadow-lg transition-all duration-800 ${
+            expertiseVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Expertise</h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -93,29 +119,25 @@ const Portfolio = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-900 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-white" />
+            {[
+              { icon: Award, title: "Strategy & Execution", description: "End-to-end campaign management with proven methodologies" },
+              { icon: Users, title: "Audience Engagement", description: "Deep understanding of audience behavior and preferences" },
+              { icon: TrendingUp, title: "Measurable Results", description: "ROI-focused approach with comprehensive analytics" }
+            ].map((item, index) => (
+              <div 
+                key={index}
+                className={`text-center transition-all duration-500 ${
+                  expertiseVisible ? 'animate-slide-in-up' : ''
+                }`}
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className="bg-gradient-to-br from-blue-900 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h4>
+                <p className="text-gray-600">{item.description}</p>
               </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">Strategy & Execution</h4>
-              <p className="text-gray-600">End-to-end campaign management with proven methodologies</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-900 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">Audience Engagement</h4>
-              <p className="text-gray-600">Deep understanding of audience behavior and preferences</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-900 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">Measurable Results</h4>
-              <p className="text-gray-600">ROI-focused approach with comprehensive analytics</p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
