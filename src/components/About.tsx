@@ -25,12 +25,12 @@ const About = () => {
           </p>
         </div>
 
-        {/* Main Content Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Main Content Section - Text Left, Image Right Layout */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div 
             ref={contentRef}
-            className={`space-y-8 transition-all duration-800 delay-200 ${
+            className={`flex-1 space-y-8 order-2 lg:order-1 transition-all duration-800 delay-200 ${
               contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
             }`}
           >
@@ -61,22 +61,26 @@ const About = () => {
           {/* Right Image Section */}
           <div 
             ref={imageRef}
-            className={`relative transition-all duration-800 delay-400 ${
+            className={`flex-1 relative order-1 lg:order-2 w-full transition-all duration-800 delay-400 ${
               imageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
             }`}
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative">
               <img 
                 src="/3f6d951e-c32e-4da1-888c-7f185e3a1caa.jpeg" 
                 alt="BrandDosage experiential marketing team in action"
-                className="w-full h-[500px] object-cover object-center"
+                className="w-full h-[400px] md:h-[500px] object-cover object-center rounded-xl shadow-2xl"
               />
               
-              {/* Overlay Stats Card */}
-              <div className="absolute bottom-6 left-6 bg-white rounded-2xl p-6 shadow-2xl z-30 border border-gray-100 min-w-[160px] transform transition-all duration-500 delay-600 hover:scale-105">
+              {/* Floating Experience Card - Bottom Left */}
+              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-white rounded-2xl p-4 md:p-6 shadow-2xl z-10 border border-gray-100 min-w-[140px] md:min-w-[160px] transform transition-all duration-500 delay-600 hover:scale-105">
                 <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-blue-900 to-green-600 bg-clip-text text-transparent mb-2">10+</div>
-                  <div className="text-gray-600 text-sm font-semibold">Years Experience</div>
+                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-900 to-green-600 bg-clip-text text-transparent mb-1 md:mb-2">
+                    10+
+                  </div>
+                  <div className="text-gray-600 text-xs md:text-sm font-semibold">
+                    Years Experience
+                  </div>
                 </div>
               </div>
             </div>
