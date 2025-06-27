@@ -47,49 +47,49 @@ const Services = () => {
 
   const services = [
     {
-      icon: Calendar,
-      title: "Event Conceptualization and Planning",
-      description: "Comprehensive event planning from concept to execution, ensuring every detail aligns with your brand vision."
+      image: "/78af07a8-3555-49f0-8ddd-15d803251e08.jpeg",
+      title: "Brand Activations and Experiential Events",
+      description: "Creating memorable brand experiences like our Coca-Cola activation campaigns that drive direct consumer engagement and brand loyalty."
     },
     {
-      icon: Zap,
-      title: "Brand Activations and Installations",
-      description: "Eye-catching brand activations that create buzz and generate meaningful interactions with your audience."
+      image: "/dee9dd2b-2f89-474a-9265-f617df13a64f.jpeg",
+      title: "Community Outreach and Grassroots Marketing",
+      description: "Connecting brands with local communities through targeted grassroots campaigns and community engagement initiatives."
     },
     {
-      icon: Users,
-      title: "Interactive Experiences and Workshops",
-      description: "Engaging workshops and interactive experiences that educate and inspire your target audience."
+      image: "/a11e27ce-ec9c-45de-860c-109ab3a0c141.jpeg",
+      title: "Event Staffing and Brand Ambassador Programs",
+      description: "Professional brand ambassadors and event staff who represent your brand with excellence and drive meaningful customer interactions."
     },
     {
-      icon: Store,
+      image: "/a143044e-a581-426c-97be-2421c672795b.jpeg",
       title: "In-Store Promotions and Retail Marketing",
-      description: "Strategic retail marketing solutions that drive foot traffic and increase sales conversions."
+      description: "Strategic retail marketing solutions including product sampling, demonstrations, and promotional campaigns that drive sales conversions."
     },
     {
-      icon: Target,
+      image: "/b00d5a82-5ef7-49f7-9cd3-5555299df017.jpeg",
+      title: "Product Sampling and Consumer Engagement",
+      description: "Direct-to-consumer product sampling campaigns that create authentic brand experiences and drive trial and purchase intent."
+    },
+    {
+      image: "/78af07a8-3555-49f0-8ddd-15d803251e08.jpeg",
+      title: "Corporate Event Management",
+      description: "End-to-end corporate event planning and execution that strengthens brand presence and stakeholder relationships."
+    },
+    {
+      image: "/dee9dd2b-2f89-474a-9265-f617df13a64f.jpeg",
+      title: "Sports and Entertainment Marketing",
+      description: "Leveraging sports and entertainment platforms to create high-impact brand experiences that reach diverse audiences."
+    },
+    {
+      image: "/a11e27ce-ec9c-45de-860c-109ab3a0c141.jpeg",
       title: "Experiential Campaign Strategy and Execution",
-      description: "End-to-end campaign management from strategic planning to flawless execution and analysis."
+      description: "Comprehensive campaign development from strategic planning to flawless execution, ensuring maximum brand impact and ROI."
     },
     {
-      icon: Megaphone,
-      title: "Event Marketing and Promotion",
-      description: "Comprehensive marketing strategies to maximize event attendance and brand exposure."
-    },
-    {
-      icon: PenTool,
-      title: "Brand Storytelling and Content Creation",
-      description: "Compelling brand narratives and content that resonate with your audience and drive engagement."
-    },
-    {
-      icon: TrendingUp,
-      title: "Sales Driven Initiatives",
-      description: "Results-focused campaigns designed to generate measurable sales growth and ROI."
-    },
-    {
-      icon: Users,
-      title: "Audience Engagement Strategies",
-      description: "Proven strategies to build deeper connections and increase customer loyalty and advocacy."
+      image: "/a143044e-a581-426c-97be-2421c672795b.jpeg",
+      title: "Consumer Research and Market Insights",
+      description: "In-depth consumer research and market analysis to inform strategy and optimize campaign effectiveness for better results."
     }
   ];
 
@@ -146,20 +146,27 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className={`group bg-white hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 p-8 rounded-2xl transition-all duration-500 hover:shadow-xl border border-gray-100 hover:border-green-200 ${
+              className={`group bg-white hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 rounded-2xl transition-all duration-500 hover:shadow-xl border border-gray-100 hover:border-green-200 overflow-hidden ${
                 servicesVisible ? 'animate-slide-in-right' : ''
               }`}
               style={{ animationDelay: `${index * 80}ms` }}
             >
-              <div className="bg-gradient-to-br from-blue-900 to-green-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <service.icon className="w-7 h-7 text-white" />
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-900 transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
-                {service.description}
-              </p>
+              <div className="p-8">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-blue-900 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
