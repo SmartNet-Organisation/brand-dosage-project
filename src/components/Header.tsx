@@ -22,6 +22,17 @@ const Header = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const handleNavClick = (href: string) => {
+    setIsMenuOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
@@ -29,7 +40,10 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3 group cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105">
+          <div 
+            className="flex items-center space-x-3 group cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+            onClick={() => handleNavClick('#home')}
+          >
             <div className="relative">
               <img 
                 src="/logo.jpeg" 
@@ -50,21 +64,24 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className={`font-medium transition-all duration-300 hover:text-green-500 transform hover:scale-105 ${
                   isScrolled ? 'text-gray-700' : 'text-white'
                 }`}
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </nav>
 
           {/* Get Started Button */}
           <div className="hidden md:block">
-            <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-200 transform hover:scale-105">
+            <button 
+              onClick={() => handleNavClick('#contact')}
+              className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-200 transform hover:scale-105"
+            >
               Get Started
             </button>
           </div>
@@ -84,19 +101,21 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-md rounded-lg mt-2 p-4 shadow-lg">
+          <div className="md:hidden bg-white/95 backdrop-blur-md rounded-lg mt-2 p-4 shadow-lg animate-slide-in-up">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="text-gray-700 font-medium hover:text-green-500 transition-all duration-300 transform hover:scale-105"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-gray-700 font-medium hover:text-green-500 transition-all duration-300 transform hover:scale-105 text-left"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
-              <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-colors mt-4">
+              <button 
+                onClick={() => handleNavClick('#contact')}
+                className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-colors mt-4"
+              >
                 Get Started
               </button>
             </nav>
