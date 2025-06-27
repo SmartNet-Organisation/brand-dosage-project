@@ -69,17 +69,17 @@ const About = () => {
               <img 
                 src="/3f6d951e-c32e-4da1-888c-7f185e3a1caa.jpeg" 
                 alt="BrandDosage experiential marketing team in action"
-                className="w-full h-[400px] md:h-[500px] object-cover object-center rounded-xl shadow-2xl"
+                className="w-full h-[400px] md:h-[500px] object-cover object-top rounded-xl shadow-2xl"
               />
               
-              {/* Floating Experience Card - Bottom Left */}
-              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-white rounded-2xl p-4 md:p-6 shadow-2xl z-10 border border-gray-100 min-w-[140px] md:min-w-[160px] transform transition-all duration-500 delay-600 hover:scale-105">
+              {/* Floating Experience Card - Positioned more to the left */}
+              <div className="absolute bottom-6 -left-8 md:bottom-8 md:-left-12 bg-white rounded-3xl p-6 md:p-8 shadow-2xl z-10 border border-gray-100 min-w-[180px] md:min-w-[220px] transform transition-all duration-500 delay-600 hover:scale-105">
                 <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-900 to-green-600 bg-clip-text text-transparent mb-1 md:mb-2">
+                  <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent mb-2 md:mb-3 tracking-tight">
                     10+
                   </div>
-                  <div className="text-gray-600 text-xs md:text-sm font-semibold">
-                    Years Experience
+                  <div className="text-gray-700 text-sm md:text-base font-bold uppercase tracking-wider leading-tight">
+                    Years<br />Experience
                   </div>
                 </div>
               </div>
