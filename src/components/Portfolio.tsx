@@ -8,11 +8,6 @@ const Portfolio = () => {
 
   const brands = [
     {
-      name: "B-8",
-      logo: "/b-8.png",
-      alt: "B-8 Brand Logo"
-    },
-    {
       name: "FCMB",
       logo: "/fcmb.png",
       alt: "FCMB Bank Logo"
@@ -31,6 +26,31 @@ const Portfolio = () => {
       name: "Campari",
       logo: "/campari.png",
       alt: "Campari Brand Logo"
+    },
+    {
+      name: "Red101",
+      logo: "/red101 copy.png",
+      alt: "Red101 Brand Logo"
+    },
+    {
+      name: "FirstMonie",
+      logo: "/first copy.png",
+      alt: "FirstMonie Agent Logo"
+    },
+    {
+      name: "Johnson & Johnson",
+      logo: "/fa933c8f-a8cc-46bd-b9fc-20551fe38de0 copy.jpeg",
+      alt: "Johnson & Johnson Logo"
+    },
+    {
+      name: "Jack Daniel's",
+      logo: "/1f4f56a5-ff32-40f5-bb99-c31250464458 copy.jpeg",
+      alt: "Jack Daniel's Logo"
+    },
+    {
+      name: "The Famous Grouse",
+      logo: "/0324a683-2860-4111-b95a-95e8cb17e303 copy.jpeg",
+      alt: "The Famous Grouse Logo"
     }
   ];
 
@@ -75,29 +95,42 @@ const Portfolio = () => {
           </p>
         </div>
 
-        {/* Brand Logos Section */}
+        {/* Brand Logos Section with Continuous Scrolling */}
         <div 
           ref={brandsRef}
           className={`mb-20 transition-all duration-800 ${
             brandsVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {brands.map((brand, index) => (
-              <div 
-                key={index}
-                className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:transform hover:scale-105 border border-gray-100 flex items-center justify-center min-h-[120px] ${
-                  brandsVisible ? 'animate-slide-in-left' : ''
-                }`}
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <img 
-                  src={brand.logo} 
-                  alt={brand.alt}
-                  className="max-w-full max-h-16 object-contain filter hover:brightness-110 transition-all duration-300"
-                />
-              </div>
-            ))}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-left">
+              {/* First set of brands */}
+              {brands.map((brand, index) => (
+                <div 
+                  key={`first-${index}`}
+                  className="flex-shrink-0 bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:transform hover:scale-105 border border-gray-100 mx-4 min-w-[200px] min-h-[120px] flex items-center justify-center"
+                >
+                  <img 
+                    src={brand.logo} 
+                    alt={brand.alt}
+                    className="max-w-full max-h-16 object-contain filter hover:brightness-110 transition-all duration-300"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {brands.map((brand, index) => (
+                <div 
+                  key={`second-${index}`}
+                  className="flex-shrink-0 bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 hover:transform hover:scale-105 border border-gray-100 mx-4 min-w-[200px] min-h-[120px] flex items-center justify-center"
+                >
+                  <img 
+                    src={brand.logo} 
+                    alt={brand.alt}
+                    className="max-w-full max-h-16 object-contain filter hover:brightness-110 transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
