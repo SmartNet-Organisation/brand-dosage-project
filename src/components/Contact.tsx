@@ -190,7 +190,7 @@ This message was sent from the BrandDosage website contact form.
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-1">Call Us</h4>
+                    <h4 className="text-lg font-semibold text-white mb-1">Chat with Us</h4>
                     <button 
                       onClick={handlePhoneClick}
                       className="text-gray-200 hover:text-green-400 transition-colors cursor-pointer"
