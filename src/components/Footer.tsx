@@ -1,8 +1,20 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const handlePhoneClick = () => {
+    window.open('https://wa.me/2348089111646', '_blank');
+  };
+
+  const handleEmailClick = () => {
+    window.open('mailto:info@branddosage.com', '_blank');
+  };
+
+  const handleInstagramClick = () => {
+    window.open('https://www.instagram.com/branddosage?igsh=OTRsZG13c21kemp5', '_blank');
+  };
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -34,9 +46,12 @@ const Footer = () => {
               <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-blue-400 rounded-full flex items-center justify-center transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-pink-600 rounded-full flex items-center justify-center transition-colors">
+              <button 
+                onClick={handleInstagramClick}
+                className="w-10 h-10 bg-gray-800 hover:bg-pink-600 rounded-full flex items-center justify-center transition-colors"
+              >
                 <Instagram className="w-5 h-5" />
-              </a>
+              </button>
               <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
@@ -74,22 +89,38 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400">info@branddosage.com</p>
-                  <p className="text-gray-400">hello@branddosage.com</p>
+                  <button 
+                    onClick={handleEmailClick}
+                    className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
+                  >
+                    info@branddosage.com
+                  </button>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400">+1 (555) 123-4567</p>
-                  <p className="text-gray-400">+1 (555) 987-6543</p>
+                  <button 
+                    onClick={handlePhoneClick}
+                    className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
+                  >
+                    08089111646
+                  </button>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400">123 Marketing Street</p>
-                  <p className="text-gray-400">Business District, NY 10001</p>
+                  <p className="text-gray-400">Plot 1, Rumuevolu Street</p>
+                  <p className="text-gray-400">Off Adageorge Road, Miniorlu Mgbuoba</p>
+                  <p className="text-gray-400">Port Harcourt, Rivers State, Nigeria</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Clock className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-gray-400">Monday - Friday</p>
+                  <p className="text-gray-400">8:00 AM - 6:00 PM</p>
                 </div>
               </div>
             </div>

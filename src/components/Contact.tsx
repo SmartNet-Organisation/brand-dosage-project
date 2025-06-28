@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Clock } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Contact = () => {
@@ -17,9 +17,37 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
+    
+    // Create Gmail compose URL with form data
+    const subject = encodeURIComponent(`New Contact Form Submission from ${formData.name}`);
+    const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company}
+
+Message:
+${formData.message}
+
+---
+This message was sent from the BrandDosage website contact form.
+    `);
+    
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@branddosage.com&su=${subject}&body=${body}`;
+    
+    // Open Gmail in a new tab
+    window.open(gmailUrl, '_blank');
+    
+    // Show success message
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
+    
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      message: ''
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -27,6 +55,14 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handlePhoneClick = () => {
+    window.open('https://wa.me/2348089111646', '_blank');
+  };
+
+  const handleEmailClick = () => {
+    window.open('mailto:info@branddosage.com', '_blank');
   };
 
   return (
@@ -61,7 +97,7 @@ const Contact = () => {
               <div className="text-center py-12">
                 <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
                 <h4 className="text-xl font-semibold text-white mb-2">Thank You!</h4>
-                <p className="text-gray-200">We'll get back to you within 24 hours.</p>
+                <p className="text-gray-200">Your message has been prepared in Gmail. Complete sending it to reach us!</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -140,8 +176,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-1">Email Us</h4>
-                    <p className="text-gray-200">info@branddosage.com</p>
-                    <p className="text-gray-200">hello@branddosage.com</p>
+                    <button 
+                      onClick={handleEmailClick}
+                      className="text-gray-200 hover:text-green-400 transition-colors cursor-pointer"
+                    >
+                      info@branddosage.com
+                    </button>
                   </div>
                 </div>
                 
@@ -151,8 +191,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-1">Call Us</h4>
-                    <p className="text-gray-200">+1 (555) 123-4567</p>
-                    <p className="text-gray-200">+1 (555) 987-6543</p>
+                    <button 
+                      onClick={handlePhoneClick}
+                      className="text-gray-200 hover:text-green-400 transition-colors cursor-pointer"
+                    >
+                      08089111646
+                    </button>
                   </div>
                 </div>
                 
@@ -162,8 +206,20 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-1">Visit Us</h4>
-                    <p className="text-gray-200">123 Marketing Street</p>
-                    <p className="text-gray-200">Business District, NY 10001</p>
+                    <p className="text-gray-200">Plot 1, Rumuevolu Street</p>
+                    <p className="text-gray-200">Off Adageorge Road, Miniorlu Mgbuoba</p>
+                    <p className="text-gray-200">Port Harcourt, Rivers State, Nigeria</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-1">Business Hours</h4>
+                    <p className="text-gray-200">Monday - Friday</p>
+                    <p className="text-gray-200">8:00 AM - 6:00 PM</p>
                   </div>
                 </div>
               </div>
