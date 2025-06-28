@@ -65,15 +65,15 @@ const About = () => {
               imageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
             }`}
           >
-            <div className="relative">
+            <div className="relative px-4 sm:px-8 lg:px-0">
               <img 
                 src="/3f6d951e-c32e-4da1-888c-7f185e3a1caa copy copy.jpeg" 
                 alt="BrandDosage experiential marketing team in action"
                 className="w-full h-[400px] md:h-[500px] object-cover object-center rounded-xl shadow-2xl"
               />
               
-              {/* Floating Experience Card - Positioned to align with button at bottom */}
-              <div className="absolute -bottom-6 -left-16 md:-bottom-8 md:-left-20 bg-white rounded-2xl p-4 md:p-5 shadow-2xl z-20 min-w-[140px] md:min-w-[160px] transform transition-all duration-500 delay-600 hover:scale-105">
+              {/* Floating Experience Card - Responsive positioning */}
+              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 lg:-bottom-8 lg:-left-20 bg-white rounded-2xl p-4 md:p-5 shadow-2xl z-20 min-w-[140px] md:min-w-[160px] transform transition-all duration-500 delay-600 hover:scale-105">
                 <div className="text-center">
                   <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent mb-1 md:mb-2 tracking-tight">
                     10+
