@@ -52,6 +52,16 @@ html {
   }
 }
 
+/* Continuous scrolling animation for brand logos */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Animation classes */
 .animate-slide-in-left {
   animation: slideInLeft 0.8s ease-out forwards;
@@ -67,6 +77,10 @@ html {
 
 .animate-fade-in-scale {
   animation: fadeInScale 0.8s ease-out forwards;
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 30s linear infinite;
 }
 
 /* Initial hidden state for animated elements */
