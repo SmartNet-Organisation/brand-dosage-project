@@ -33,6 +33,17 @@ const Header = () => {
     }
   };
 
+  const handleGetStarted = () => {
+    setIsMenuOpen(false);
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
@@ -79,7 +90,7 @@ const Header = () => {
           {/* Get Started Button */}
           <div className="hidden md:block">
             <button 
-              onClick={() => handleNavClick('#contact')}
+              onClick={handleGetStarted}
               className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-200 transform hover:scale-105"
             >
               Get Started
@@ -113,7 +124,7 @@ const Header = () => {
                 </button>
               ))}
               <button 
-                onClick={() => handleNavClick('#contact')}
+                onClick={handleGetStarted}
                 className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-colors mt-4"
               >
                 Get Started

@@ -2,6 +2,16 @@ import React from 'react';
 import { Play, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
+  const handleGetStarted = () => {
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen bg-gradient-to-br from-blue-900 to-green-600 flex items-center justify-center relative overflow-hidden pt-32">
       {/* Background Pattern */}
@@ -21,7 +31,10 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <button className="bg-green-500 hover:bg-green-600 hover:shadow-[0_0_30px_rgba(34,197,94,0.4)] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 shadow-lg">
+            <button 
+              onClick={handleGetStarted}
+              className="bg-green-500 hover:bg-green-600 hover:shadow-[0_0_30px_rgba(34,197,94,0.4)] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 shadow-lg"
+            >
               <span>Start Your Campaign</span>
               <ArrowRight className="w-5 h-5" />
             </button>

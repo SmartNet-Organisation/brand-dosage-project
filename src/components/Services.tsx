@@ -17,6 +17,16 @@ const Services = () => {
   const [featuresRef, featuresVisible] = useScrollAnimation();
   const [servicesRef, servicesVisible] = useScrollAnimation();
 
+  const handleScrollToContact = () => {
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   // Feature cards matching the second reference image design
   const features = [
     {
@@ -85,11 +95,6 @@ const Services = () => {
       image: "/1107dd6b-bcf0-4c83-a1eb-8abcaa0bc918.jpeg",
       title: "Mobile Marketing and Roadshow Campaigns",
       description: "Mobile marketing solutions and roadshow campaigns that bring your brand directly to your target audience across multiple locations."
-    },
-    {
-      image: "/a143044e-a581-426c-97be-2421c672795b.jpeg",
-      title: "Consumer Research and Market Insights",
-      description: "In-depth consumer research and market analysis to inform strategy and optimize campaign effectiveness for better results."
     }
   ];
 
@@ -172,7 +177,10 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-blue-900 to-green-600 hover:from-blue-800 hover:to-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+          <button 
+            onClick={handleScrollToContact}
+            className="bg-gradient-to-r from-blue-900 to-green-600 hover:from-blue-800 hover:to-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+          >
             Discuss Your Project
           </button>
         </div>
