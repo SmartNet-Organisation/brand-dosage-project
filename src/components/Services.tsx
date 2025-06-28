@@ -72,19 +72,19 @@ const Services = () => {
       description: "Direct-to-consumer product sampling campaigns that create authentic brand experiences and drive trial and purchase intent."
     },
     {
-      image: "/78af07a8-3555-49f0-8ddd-15d803251e08.jpeg",
-      title: "Corporate Event Management",
-      description: "End-to-end corporate event planning and execution that strengthens brand presence and stakeholder relationships."
+      image: "/a8827413-8dfc-413d-90fe-01d308417bac.jpeg",
+      title: "Premium Brand Installations and Displays",
+      description: "High-end brand installations and interactive displays like our Blue Nun activation that create immersive brand experiences and drive engagement."
     },
     {
-      image: "/dee9dd2b-2f89-474a-9265-f617df13a64f.jpeg",
-      title: "Sports and Entertainment Marketing",
-      description: "Leveraging sports and entertainment platforms to create high-impact brand experiences that reach diverse audiences."
+      image: "/e7f76bf2-a72c-4b2b-bafb-2231e55cdecc.jpeg",
+      title: "Retail Point-of-Sale Marketing",
+      description: "Strategic point-of-sale marketing campaigns and retail promotions that maximize brand visibility and drive immediate purchase decisions."
     },
     {
-      image: "/a11e27ce-ec9c-45de-860c-109ab3a0c141.jpeg",
-      title: "Experiential Campaign Strategy and Execution",
-      description: "Comprehensive campaign development from strategic planning to flawless execution, ensuring maximum brand impact and ROI."
+      image: "/1107dd6b-bcf0-4c83-a1eb-8abcaa0bc918.jpeg",
+      title: "Mobile Marketing and Roadshow Campaigns",
+      description: "Mobile marketing solutions and roadshow campaigns that bring your brand directly to your target audience across multiple locations."
     },
     {
       image: "/a143044e-a581-426c-97be-2421c672795b.jpeg",
