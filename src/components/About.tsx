@@ -67,19 +67,21 @@ const About = () => {
           >
             <div className="relative">
               <img 
-                src="/3f6d951e-c32e-4da1-888c-7f185e3a1caa.jpeg" 
+                src="/3f6d951e-c32e-4da1-888c-7f185e3a1caa copy copy.jpeg" 
                 alt="BrandDosage experiential marketing team in action"
-                className="w-full h-[400px] md:h-[500px] object-cover object-top rounded-xl shadow-2xl"
+                className="w-full h-[400px] md:h-[500px] object-cover object-center rounded-xl shadow-2xl"
               />
               
-              {/* Floating Experience Card - Positioned at bottom right of image */}
-              <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 bg-white rounded-3xl p-6 md:p-8 shadow-2xl z-10 border border-gray-100 min-w-[180px] md:min-w-[220px] transform transition-all duration-500 delay-600 hover:scale-105">
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent mb-2 md:mb-3 tracking-tight">
-                    10+
-                  </div>
-                  <div className="text-gray-700 text-sm md:text-base font-bold uppercase tracking-wider leading-tight">
-                    Years<br />Experience
+              {/* Floating Experience Card - Positioned at extreme left with glowing border */}
+              <div className="absolute bottom-4 -left-8 md:bottom-6 md:-left-12 bg-white rounded-3xl p-6 md:p-8 shadow-2xl z-10 border-2 border-transparent bg-gradient-to-r from-blue-900 to-green-600 bg-clip-border min-w-[180px] md:min-w-[220px] transform transition-all duration-500 delay-600 hover:scale-105 hover:shadow-[0_0_30px_rgba(34,197,94,0.4)]">
+                <div className="bg-white rounded-2xl p-4 md:p-6 -m-1">
+                  <div className="text-center">
+                    <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-blue-900 to-green-600 bg-clip-text text-transparent mb-2 md:mb-3 tracking-tight">
+                      10+
+                    </div>
+                    <div className="text-gray-700 text-sm md:text-base font-bold uppercase tracking-wider leading-tight">
+                      Years<br />Experience
+                    </div>
                   </div>
                 </div>
               </div>
