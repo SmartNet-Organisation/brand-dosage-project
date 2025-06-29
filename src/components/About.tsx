@@ -72,13 +72,13 @@ const About = () => {
                 className="w-full h-[400px] md:h-[500px] object-cover object-center rounded-xl shadow-2xl"
               />
               
-              {/* Floating Experience Card - Very small and compact */}
-              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 lg:-bottom-4 lg:-left-8 xl:-bottom-5 xl:-left-10 bg-white rounded-lg p-2 sm:p-2.5 lg:p-2 shadow-2xl z-20 w-16 sm:w-20 lg:w-16 xl:w-18 transform transition-all duration-500 delay-600 hover:scale-105">
+              {/* Floating Experience Card - Better sized and positioned */}
+              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 lg:-bottom-4 lg:-left-12 xl:-bottom-5 xl:-left-14 bg-white rounded-xl p-3 sm:p-4 lg:p-3 shadow-2xl z-20 w-24 sm:w-28 lg:w-24 xl:w-28 transform transition-all duration-500 delay-600 hover:scale-105">
                 <div className="text-center">
-                  <div className="text-sm sm:text-base lg:text-sm xl:text-base font-black bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent mb-0.5 tracking-tight">
+                  <div className="text-lg sm:text-xl lg:text-lg xl:text-xl font-black bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent mb-1 tracking-tight">
                     10+
                   </div>
-                  <div className="text-gray-700 text-[8px] sm:text-[9px] lg:text-[8px] xl:text-[9px] font-bold uppercase tracking-wider leading-tight">
+                  <div className="text-gray-700 text-[10px] sm:text-xs lg:text-[10px] xl:text-xs font-bold uppercase tracking-wider leading-tight">
                     Years<br />Experience
                   </div>
                 </div>
