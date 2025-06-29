@@ -72,8 +72,8 @@ const About = () => {
                 className="w-full h-[400px] md:h-[500px] object-cover object-center rounded-xl shadow-2xl"
               />
               
-              {/* Floating Experience Card - Positioned lower within image area */}
-              <div className="absolute bottom-4 right-3 sm:bottom-6 sm:right-4 lg:-bottom-4 lg:-left-12 xl:-bottom-5 xl:-left-14 bg-white rounded-xl p-3 sm:p-4 lg:p-3 shadow-2xl z-20 w-24 sm:w-28 lg:w-24 xl:w-28 transform transition-all duration-500 delay-600 hover:scale-105">
+              {/* Floating Experience Card - Positioned much lower on mobile */}
+              <div className="absolute bottom-1 right-3 sm:bottom-2 sm:right-4 lg:-bottom-4 lg:-left-12 xl:-bottom-5 xl:-left-14 bg-white rounded-xl p-3 sm:p-4 lg:p-3 shadow-2xl z-20 w-24 sm:w-28 lg:w-24 xl:w-28 transform transition-all duration-500 delay-600 hover:scale-105">
                 <div className="text-center">
                   <div className="text-lg sm:text-xl lg:text-lg xl:text-xl font-black bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent mb-1 tracking-tight">
                     10+
