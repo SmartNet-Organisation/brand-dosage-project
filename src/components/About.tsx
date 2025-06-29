@@ -73,7 +73,7 @@ const About = () => {
               />
               
               {/* Floating Experience Card - Much smaller size */}
-              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 lg:-bottom-4 lg:-left-12 xl:-bottom-5 xl:-left-14 bg-white rounded-xl p-2 sm:p-3 lg:p-3 shadow-2xl z-20 min-w-[80px] sm:min-w-[90px] lg:min-w-[20px] transform transition-all duration-500 delay-600 hover:scale-105">
+              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 lg:-bottom-4 lg:-left-12 xl:-bottom-5 xl:-left-14 bg-white rounded-xl p-2 sm:p-3 lg:p-3 shadow-2xl z-20 min-w-[30px] sm:min-w-[90px] lg:min-w-[20px] transform transition-all duration-500 delay-600 hover:scale-105">
                 <div className="text-center">
                   <div className="text-lg sm:text-xl lg:text-2xl font-black bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent mb-0.5 lg:mb-1 tracking-tight">
                     10+
