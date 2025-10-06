@@ -26,7 +26,11 @@ const Header = () => {
     setIsMenuOpen(false);
     const element = document.querySelector(href);
     if (element) {
+<<<<<<< HEAD
       element.scrollIntoView({
+=======
+      element.scrollIntoView({ 
+>>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
         behavior: 'smooth',
         block: 'start'
       });
@@ -37,7 +41,11 @@ const Header = () => {
     setIsMenuOpen(false);
     const contactSection = document.querySelector('#contact');
     if (contactSection) {
+<<<<<<< HEAD
       contactSection.scrollIntoView({
+=======
+      contactSection.scrollIntoView({ 
+>>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
         behavior: 'smooth',
         block: 'start'
       });
@@ -45,25 +53,45 @@ const Header = () => {
   };
 
   return (
+<<<<<<< HEAD
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div
+=======
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div 
+>>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
             className="flex items-center space-x-3 group cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
             onClick={() => handleNavClick('#home')}
           >
             <div className="relative">
+<<<<<<< HEAD
               <img
                 src="/logo.jpeg"
                 alt="BrandDosage Logo"
+=======
+              <img 
+                src="/logo.jpeg" 
+                alt="BrandDosage Logo" 
+>>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
                 className="w-12 h-12 object-contain"
               />
             </div>
             <div>
               <div className={`font-bold text-lg ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+<<<<<<< HEAD
                 BRANDDOSAGE
+=======
+                BrandDosage
+>>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
               </div>
               <div className={`text-xs ${isScrolled ? 'text-gray-600' : 'text-gray-300'}`}>
                 Experiential Marketing
@@ -77,8 +105,14 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
+<<<<<<< HEAD
                 className={`font-medium transition-all duration-300 hover:text-green-500 transform hover:scale-105 ${isScrolled ? 'text-gray-700' : 'text-white'
                   }`}
+=======
+                className={`font-medium transition-all duration-300 hover:text-green-500 transform hover:scale-105 ${
+                  isScrolled ? 'text-gray-700' : 'text-white'
+                }`}
+>>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
               >
                 {item.name}
               </button>
@@ -87,7 +121,11 @@ const Header = () => {
 
           {/* Get Started Button */}
           <div className="hidden md:block">
+<<<<<<< HEAD
             <button
+=======
+            <button 
+>>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
               onClick={handleGetStarted}
               className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-all duration-200 transform hover:scale-105"
             >
@@ -121,7 +159,11 @@ const Header = () => {
                   {item.name}
                 </button>
               ))}
+<<<<<<< HEAD
               <button
+=======
+              <button 
+>>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
                 onClick={handleGetStarted}
                 className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-colors mt-4"
               >
