@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import {
   Target,
   Users,
@@ -9,17 +8,6 @@ import {
   Zap,
   Store,
   Megaphone,
-=======
-import { 
-  Target, 
-  Users, 
-  Lightbulb, 
-  TrendingUp,
-  Calendar, 
-  Zap, 
-  Store, 
-  Megaphone, 
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
   PenTool
 } from 'lucide-react';
 import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
@@ -32,11 +20,7 @@ const Services = () => {
   const handleScrollToContact = () => {
     const contactSection = document.querySelector('#contact');
     if (contactSection) {
-<<<<<<< HEAD
       contactSection.scrollIntoView({
-=======
-      contactSection.scrollIntoView({ 
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
         behavior: 'smooth',
         block: 'start'
       });
@@ -88,13 +72,8 @@ const Services = () => {
       description: "Professional brand ambassadors and event staff who represent your brand with excellence and drive meaningful customer interactions."
     },
     {
-<<<<<<< HEAD
       image: "/events.jpg",
       title: "Event Marketing and Promotion",
-=======
-      image: "/a143044e-a581-426c-97be-2421c672795b.jpeg",
-      title: "In-Store Promotions and Retail Marketing",
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
       description: "Strategic retail marketing solutions including product sampling, demonstrations, and promotional campaigns that drive sales conversions."
     },
     {
@@ -109,11 +88,7 @@ const Services = () => {
     },
     {
       image: "/e7f76bf2-a72c-4b2b-bafb-2231e55cdecc.jpeg",
-<<<<<<< HEAD
       title: "Instore Promotions and Word of Mouth Marketing (WOMM)",
-=======
-      title: "Retail Point-of-Sale Marketing",
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
       description: "Strategic point-of-sale marketing campaigns and retail promotions that maximize brand visibility and drive immediate purchase decisions."
     },
     {
@@ -127,7 +102,6 @@ const Services = () => {
     <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Feature Cards Section */}
-<<<<<<< HEAD
         <div
           ref={featuresRef}
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 transition-all duration-800 ${featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -138,20 +112,6 @@ const Services = () => {
               key={index}
               className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:transform hover:scale-105 border border-gray-100 ${featuresVisible ? 'animate-slide-in-left' : ''
                 }`}
-=======
-        <div 
-          ref={featuresRef}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 transition-all duration-800 ${
-            featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:transform hover:scale-105 border border-gray-100 ${
-                featuresVisible ? 'animate-slide-in-left' : ''
-              }`}
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className={`bg-gradient-to-br ${feature.gradient} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
@@ -164,35 +124,21 @@ const Services = () => {
         </div>
 
         {/* Services Section */}
-<<<<<<< HEAD
         <div
           ref={titleRef}
           className={`text-center mb-16 transition-all duration-800 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
-=======
-        <div 
-          ref={titleRef}
-          className={`text-center mb-16 transition-all duration-800 ${
-            titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Professional Services
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-<<<<<<< HEAD
             As an experiential advertising marketing agency, we offer a comprehensive
             range of services designed to elevate your brand and create meaningful
-=======
-            As an experiential advertising marketing agency, we offer a comprehensive 
-            range of services designed to elevate your brand and create meaningful 
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
             connections with your audience.
           </p>
         </div>
 
-<<<<<<< HEAD
         <div
           ref={servicesRef}
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-800 ${servicesVisible ? 'opacity-100' : 'opacity-0'
@@ -208,25 +154,6 @@ const Services = () => {
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={service.image}
-=======
-        <div 
-          ref={servicesRef}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-800 ${
-            servicesVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          {services.map((service, index) => (
-            <div 
-              key={index} 
-              className={`group bg-white hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 rounded-2xl transition-all duration-500 hover:shadow-xl border border-gray-100 hover:border-green-200 overflow-hidden ${
-                servicesVisible ? 'animate-slide-in-right' : ''
-              }`}
-              style={{ animationDelay: `${index * 80}ms` }}
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -245,19 +172,15 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-16">
-<<<<<<< HEAD
           <button
-=======
-          <button 
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
             onClick={handleScrollToContact}
             className="bg-gradient-to-r from-blue-900 to-green-600 hover:from-blue-800 hover:to-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
           >
             Discuss Your Project
           </button>
-        </div>
-      </div>
-    </section>
+        </div >
+      </div >
+    </section >
   );
 };
 

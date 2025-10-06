@@ -19,11 +19,7 @@ const Footer = () => {
   // Custom X (Twitter) icon component
   const XIcon = ({ className }: { className?: string }) => (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-<<<<<<< HEAD
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-=======
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
     </svg>
   );
 
@@ -35,33 +31,19 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-3 group cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105">
               <div className="relative">
-<<<<<<< HEAD
                 <img
                   src="/logo.jpeg"
                   alt="BrandDosage Logo"
-=======
-                <img 
-                  src="/logo.jpeg" 
-                  alt="BrandDosage Logo" 
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
                   className="w-12 h-12 object-contain"
                 />
               </div>
               <div>
-<<<<<<< HEAD
                 <div className="font-bold text-lg text-white">BRANDDOSAGE</div>
-=======
-                <div className="font-bold text-lg text-white">BrandDosage</div>
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
                 <div className="text-sm text-gray-400">Experiential Marketing</div>
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed">
-<<<<<<< HEAD
               Building brands and delivering solutions through innovative experiential marketing campaigns
-=======
-              Building brands and delivering solutions through innovative experiential marketing campaigns 
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
               that drive engagement and create lasting impact.
             </p>
             <div className="flex space-x-4">
@@ -71,11 +53,7 @@ const Footer = () => {
               <a href="#" className="w-10 h-10 bg-gray-800 hover:bg-black rounded-full flex items-center justify-center transition-colors">
                 <XIcon className="w-5 h-5" />
               </a>
-<<<<<<< HEAD
               <button
-=======
-              <button 
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
                 onClick={handleInstagramClick}
                 className="w-10 h-10 bg-gray-800 hover:bg-pink-600 rounded-full flex items-center justify-center transition-colors"
               >
@@ -118,11 +96,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
                 <div>
-<<<<<<< HEAD
                   <button
-=======
-                  <button 
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
                     onClick={handleEmailClick}
                     className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
                   >
@@ -133,11 +107,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
                 <div>
-<<<<<<< HEAD
                   <button
-=======
-                  <button 
->>>>>>> 5cbf7160c69fff46ca1c6a65c33922497fe413a5
                     onClick={handlePhoneClick}
                     className="text-gray-400 hover:text-green-400 transition-colors cursor-pointer"
                   >
